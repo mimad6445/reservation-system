@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Cards</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">My Products</div>
+        <ul class="navbar-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/reservations.html">View Reservations</a></li>
+          <li id="user-info" style="font-weight: bold; color: #facc15;"></li>
+        </ul>
+      </nav>
+  <div class="container">
+    <h1>Our Products</h1>
+    <div class="grid" id="productGrid"></div>
+  </div>
+  <div id="reservationModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Reserve Product</h2>
+      <p id="selectedProductName"></p>
+
+      <label for="startDate">Start Date:</label>
+      <input type="date" id="startDate" />
+
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" />
+
+      <div class="modal-actions">
+        <button onclick="submitReservation()">Submit</button>
+        <button onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
