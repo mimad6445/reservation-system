@@ -7,7 +7,7 @@ body {
   
   .container {
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 4rem auto;
     padding: 1rem;
   }
   
@@ -175,4 +175,34 @@ body {
 
 .navbar-menu li a:hover {
   color: #facc15;
+}
+
+.search-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: flex;
+  gap: 10px;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #1e40af;
 }

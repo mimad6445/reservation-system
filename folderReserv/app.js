@@ -134,3 +134,29 @@ async function fetchUserInfo() {
 }
 
 fetchUserInfo();
+
+async function handleSearch() {
+  const keyword = document.getElementById('searchInput').value.trim();
+  if (!keyword) return;
+
+  try {
+    console.log("keyword",keyword);
+    const res = await fetch('http://localhost:7000/api/search', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ query: keyword }),
+    });
+
+    if (!res.ok) throw new Error('Failed to fetch search results');
+    console.log("res",res);
+    
+    const data = await res.json();
+    console.log("data",data);
+    renderProducts(data);
+  } catch (err) {
+    console.error('Search error:', err);
+    alert('Search failed. Please try again.');
+  }
+}

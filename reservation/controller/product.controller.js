@@ -3,7 +3,8 @@ const Product = require('../models/Product');
 exports.createProduct = async (req, res) => {
     try {
         const { name , description , priceInPoints , category , countInStock , rating , numReviews , tags } = req.body;
-        const image = req.file ? req.file.path : req.body.image;
+        const image = req.file ? req.file.filename : req.body.image;
+        console.log(req.file.filename);
         const newProduct = new Product({
             name,
             description,
@@ -27,6 +28,7 @@ exports.createProduct = async (req, res) => {
 exports.getProducts = async (req, res) => {
     try {
         const products = await Product.find();
+        console.log(products);
         res.json(products);
     } catch (error) {
         res.status(500).json({ error: error.message });

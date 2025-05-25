@@ -15,10 +15,17 @@
           <li id="user-info" style="font-weight: bold; color: #facc15;"></li>
         </ul>
       </nav>
-  <div class="container">
-    <h1>Our Products</h1>
-    <div class="grid" id="productGrid"></div>
-  </div>
+      <div class="container">
+        <h1>Our Products</h1>
+        <div class="grid" id="productGrid"></div>
+      </div>
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search products..." />
+        <button onclick="handleSearch()">Search</button>
+      </div>
+      
+      <div id="productGrid" class="grid"></div>
+  
   <div id="reservationModal" class="modal hidden">
     <div class="modal-content">
       <h2>Reserve Product</h2>
